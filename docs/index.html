@@ -14,7 +14,7 @@
   <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
 
   <!-- Add all your videos here -->
-  <link rel="preload" as="video" href="video/placeholder.mp4" type="video/mp4">
+  <link rel="preload" as="video" href="./videos/Summary.mp4" type="video/mp4">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC1STJNFMS"></script>
@@ -131,13 +131,13 @@
   <section class="hero is-gray is-fullheight video" style="overflow: hidden; position:relative;">
     <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
       <video playsinline autoplay muted loop style="opacity: 0.98;">
-        <source src="./video/placeholder.mp4" type="video/mp4">
+        <source src="./videos/Summary.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-video is-hidden-tablet is-inline-block-mobile"
       style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
       <video playsinline autoplay muted loop>
-        <source src="./video/placeholder.mp4" type="video/mp4">
+        <source src="./videos/Summary.mp4" type="video/mp4">
       </video>
     </div>
     <div class="overlay"></div>
@@ -179,31 +179,13 @@
 
           <link href="https://fonts.googleapis.com/css?family=Times+New+Roman" rel="stylesheet">
           <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">U</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">n</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0672; letter-spacing: -0.2em;">i</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff067e; letter-spacing: -0.2em;">T</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06c5; letter-spacing: -0.2em;">a</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b4; letter-spacing: -0.2em;">c</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b0; letter-spacing: -0.2em;">H</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06a3; letter-spacing: -0.2em;">a</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0690; letter-spacing: -0.2em;">n</span>
-          <span
-            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0680; letter-spacing: -0.2em;">d</span>
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; letter-spacing: 0.05em; background: linear-gradient(to right, #FFA500, #800080); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">UniTacHand</span>
         </h1>
-        <h1 class="subtitle is-1 publication-title is-size-3-mobile" style="font-size: 3rem; color: white;">
+        <h1 class="subtitle is-1 publication-title is-size-3-mobile" style="font-size: 3rem; color: white; font-weight: bold;">
           Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer
         </h1>
         <h1 class="subtitle is-1 publication-title is-size-4-mobile"
-          style="font-size: 2rem; color: rgb(255, 255, 255);">
+          style="font-size: 2rem; color: rgb(255, 255, 255); font-weight: bold;">
           <br>PKU &nbsp;&nbsp; BeingBeyond
         </h1>
         <div class="column has-text-centered is-hidden-tablet">
@@ -453,15 +435,17 @@
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-three-thirds">
+        <div class="column is-full">
           <div>
             <h2 class="title is-3 is-size-4-mobile">Method Overview</h2>
             <div class="columns is-centered">
-              <img src="./images/pipeline.jpg" alt="overview" style="width: 100%;">
+              <div class="column is-full">
+                <img src="./images/pipeline.jpg" alt="overview" style="width: 100%;">
+              </div>
             </div>
 
             <div class="columns is-centered has-text-centered">
-              <div class="column is-three-thirds">
+              <div class="column is-full">
                 <div class="content has-text-justified">
                   <br>
                   <ol type="a">
@@ -485,15 +469,17 @@
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-three-thirds">
+        <div class="column is-full">
           <div>
             <h2 class="title is-3 is-size-4-mobile">UV mapping Results</h2>
             <div class="columns is-centered">
-              <img src="./images/showcase.jpg" alt="overview" style="width: 100%;">
+              <div class="column is-full">
+                <img src="./images/showcase.jpg" alt="overview" style="width: 50%;">
+              </div>
             </div>
 
             <div class="columns is-centered has-text-centered">
-              <div class="column is-three-thirds">
+              <div class="column is-full">
                 <div class="content has-text-justified">
                   <br>
                   <ol type="a">
@@ -505,6 +491,103 @@
                   </ol>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-thirds">
+          <h2 class="title is-3 is-size-4-mobile">Experimental Results</h2>
+          
+          <!-- Table 1 -->
+          <div class="content has-text-justified">
+            <p>
+              <strong>Detailed results of the tasks <tt>CompliantControl</tt> and <tt>ObjectClassification</tt>.</strong> 
+              We calculate the accuracy (%) for each task on each method.
+            </p>
+          </div>
+          <div class="content">
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth has-text-centered" style="font-size: 1.1rem;">
+                <thead>
+                  <tr>
+                    <th colspan="2">Tasks</th>
+                    <th>PatchMatch</th>
+                    <th>UV-Direct</th>
+                    <th>UniTacHand (Ours)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="2">CompliantControl</td>
+                    <td>10.0</td>
+                    <td>36.0</td>
+                    <td><strong>40.0</strong></td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" style="vertical-align: middle;">ObjectClassification</td>
+                    <td>Human Validation Set</td>
+                    <td>43.2</td>
+                    <td><strong>71.6</strong></td>
+                    <td>59.5</td>
+                  </tr>
+                  <tr>
+                    <td>Real Robot Test Set</td>
+                    <td>15.7</td>
+                    <td>18.9</td>
+                    <td><strong>38.6</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Table 2 -->
+          <div class="content has-text-justified">
+            <p>
+              <strong>One-shot manipulation task success rate (%).</strong> 
+              We compare our methods with both visual-only baselines and methods that are solely trained on real robot data.
+            </p>
+          </div>
+          <div class="content">
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth has-text-centered" style="font-size: 1.1rem;">
+                <thead>
+                  <tr>
+                    <th colspan="2">Methods</th>
+                    <th>Success Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="2" style="vertical-align: middle;">Robot Data Only</td>
+                    <td><strong>R-Visual-Only</strong></td>
+                    <td>43.3</td>
+                  </tr>
+                  <tr>
+                    <td><strong>R-Visual-Tactile</strong></td>
+                    <td>50.0</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3" style="vertical-align: middle;">Human Data w/<br>One-Shot Robot Data</td>
+                    <td><strong>PatchMatch</strong></td>
+                    <td>56.7</td>
+                  </tr>
+                  <tr>
+                    <td><strong>UV-Direct</strong></td>
+                    <td>63.3</td>
+                  </tr>
+                  <tr>
+                    <td><strong>UniTacHand (Ours)</strong></td>
+                    <td><strong>73.3</strong></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
