@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="UniTacHand: Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer">
+  <meta property="og:title" content="UniTacHand" />
+  <meta property="og:url" content="https://beingbeyond.github.io/UniTacHand/" />
+  <meta name="keywords" content="Tactile Representation, Human-to-Dexterous-Hand Skill Transfer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UniTacHand</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
+
+  <!-- Add all your videos here -->
+  <link rel="preload" as="video" href="video/placeholder.mp4" type="video/mp4">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC1STJNFMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FC1STJNFMS');
+  </script>
+
+  <style>
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      /* Space out the pairs of videos */
+      width: 60%;
+      margin: 0 auto;
+      /* Center the container */
+      padding: 0 20px;
+      /* Add padding on the sides for smaller screens */
+    }
+
+    .video-two {
+      width: 48%;
+      /* Adjust width slightly for spacing */
+      margin-bottom: 20px;
+      /* Space between rows */
+    }
+
+    .video-group {
+      width: 31%;
+      /* Adjust width slightly for spacing */
+      margin-bottom: 20px;
+    }
+
+    .video-pair {
+      width: 23%;
+      /* Adjust width slightly for spacing */
+      margin-bottom: 20px;
+      /* Space between rows */
+    }
+
+    .video-pair video {
+      width: 100%;
+      /*Video itself occupies full-width of parent (.video-pair)*/
+      height: auto;
+      display: block;
+      /* Important for consistent sizing/spacing*/
+    }
+
+    .video-label {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* 一行四个视频，适度变窄 */
+    .video-row {
+      display: flex;
+      gap: 12px;
+      /* 每段视频之间的间距 */
+      justify-content: center;
+      /* 居中整行 */
+      align-items: flex-start;
+    }
+
+    .video-row .item {
+      flex: 0 0 22%;
+      /* 宽度≈容器的 22%（四个并排 + 间距）*/
+      max-width: 22%;
+    }
+
+    .video-row video {
+      width: 100%;
+      height: auto;
+      /* 保持比例 */
+      display: block;
+      border-radius: 6px;
+      /* 可选的小圆角 */
+    }
+
+    /* 小屏时自动换行，两列显示（可按需调整或删除） */
+    @media (max-width: 768px) {
+      .video-row {
+        flex-wrap: wrap;
+      }
+
+      .video-row .item {
+        flex: 0 0 48%;
+        max-width: 48%;
+      }
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero is-gray is-fullheight video" style="overflow: hidden; position:relative;">
+    <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
+      <video playsinline autoplay muted loop style="opacity: 0.98;">
+        <source src="./video/placeholder.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-video is-hidden-tablet is-inline-block-mobile"
+      style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
+      <video playsinline autoplay muted loop>
+        <source src="./video/placeholder.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head is-hidden-mobile">
+      <header class="navbar">
+        <div class="container is-size-5">
+          <div class="navbar-menu">
+
+            <div class="navbar-end">
+              <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/pdf/placeholder>
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./images/icon/pdf.svg" alt="PDF" />
+                </span>
+                <span style="color: #ffffff;">Paper</span>
+              </a>
+              <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/abs/placeholder">
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./images/icon/arxiv.svg" alt="arXiv" />
+                </span>
+                <span style="color: #ffffff;">arXiv</span>
+              </a>
+              <a class="navbar-item  pl-4 pr-4" href="https://github.com/BeingBeyond/UniTacHand">
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./images/icon/github.svg" alt="github" />
+                </span>
+                <span style="color: #ffffff;">Project</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 10rem;">
+
+          <link href="https://fonts.googleapis.com/css?family=Times+New+Roman" rel="stylesheet">
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">U</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">n</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0672; letter-spacing: -0.2em;">i</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff067e; letter-spacing: -0.2em;">T</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06c5; letter-spacing: -0.2em;">a</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b4; letter-spacing: -0.2em;">c</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b0; letter-spacing: -0.2em;">H</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06a3; letter-spacing: -0.2em;">a</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0690; letter-spacing: -0.2em;">n</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0680; letter-spacing: -0.2em;">d</span>
+        </h1>
+        <h1 class="subtitle is-1 publication-title is-size-3-mobile" style="font-size: 3rem; color: white;">
+          Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer
+        </h1>
+        <h1 class="subtitle is-1 publication-title is-size-4-mobile"
+          style="font-size: 2rem; color: rgb(255, 255, 255);">
+          <br>PKU &nbsp;&nbsp; BeingBeyond
+        </h1>
+        <div class="column has-text-centered is-hidden-tablet">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/placeholder" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="./images/icon/pdf.svg" alt="PDF" />
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/placeholder" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="./images/icon/arxiv.svg" alt="arXiv" />
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/BeingBeyond/UniTacHand"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="./images/icon/github.svg" alt="github" />
+                </span>
+                <span>Project</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-size-3-mobile">
+              <!-- <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFD700; letter-spacing: -0.2em;">B</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFC300; letter-spacing: -0.2em;">u</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFB000; letter-spacing: -0.2em;">m</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFA000; letter-spacing: -0.2em;">b</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFAA00; letter-spacing: -0.2em;">l</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFD700; letter-spacing: -0.2em;">e</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFC300; letter-spacing: -0.2em;">B</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFB000; letter-spacing: -0.2em;">e</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFA000; letter-spacing: -0.2em;">e</span>
+              <br> -->
+              <span style="font-size: 90%">UniTacHand: Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer</span>
+            </h1>
+
+            <h1>
+              <div class="is-size-4 publication-authors is-size-5-mobile">
+                <span class="author-block">
+                  <a href="">Chi Zhang</a>*<sup>1,2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://Intellouis.github.io/">Penglin Cai</a>*<sup>1,2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://yhqpkueecs.github.io/">Haoqi Yuan</a><sup>1,2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://co1one.github.io/">Chaoyi Xu</a><sup>2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://z0ngqing.github.io/">Zongqing Lu</a><sup>&sect;1,2</sup>
+                </span>
+              </div>
+            </h1>
+            <h1>
+              <br>
+              <div class="is-size-4 publication-authors is-size-5-mobile">
+                <span class="author-block" style="font-size: 100%"> <sup>1</sup>PKU </span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block" style="font-size: 100%"> <sup>2</sup>BeingBeyond </span>
+              </div>
+            </h1>
+            <h1>
+              <div class="is-size-5 publication-authors is-size-6-mobile">
+                <span class="author-block"><small><br><sup>*</sup>Equal Contribution &nbsp;
+                    <sup>&sect;</sup>Corresponding Author</small></span>
+              </div>
+            </h1>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/placeholder" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/placeholder" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/BeingBeyond/UniTacHand"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Project</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="double-carousel" class="carousel results-carousel">
+          <!-- === Page 1 === -->
+          <div class="item">
+            <div class="columns is-multiline is-centered">
+              <!-- 第一行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- 第二行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- === Page 2 === -->
+          <div class="item">
+            <div class="columns is-multiline is-centered">
+              <!-- 第一行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- 第二行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/placeholder.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h2 class="title is-3 is-size-4-mobile">Abstract</h2>
+          <div class="content has-text-justified">
+            <ol type="a">
+              Enabling robotic hands to achieve human-level dexterous manipulation remains a significant challenge. 
+              While tactile sensing is crucial, especially in scenarios with visual occlusion, its application is 
+              often hindered by the difficulty of collecting large-scale, real-world robotic tactile data. On the other 
+              hand, learning from human demonstration (LfD) offers a promising alternative due to the high accessibility 
+              of rich and diverse human data. 
+              However, directly leveraging human demonstrations is often questionable due to the fundamental mismatch 
+              between human haptic gloves and robotic tactile sensors, which requires an alignment between human and 
+              robotic data. To bridge this gap, we propose <strong>UniTacHand</strong>, a novel unified representation to align robotic 
+              tactile information captured by dexterous hands with human hand touch obtained from gloves with sensors. In 
+              this paper, we project disparate tactile signals, from both the human haptic gloves and the robotic hands, 
+              onto a morphologically consistent 2D surface space of the MANO hand model. Such unification standardizes the 
+              heterogeneous data structures and inherently embeds the tactile signals with spatial context. We utilize a 
+              contrastive learning framework to align the two domains into a unified latent space. Based on this unified 
+              structure, we demonstrate that 10-minute paired data are sufficient to train this alignment. Our approach 
+              achieves a zero-shot tactile-based policy transfer, in which the policies are solely trained using human data, 
+              to a physical robot. Such policies can be deployed to perform complex downstream tasks, including identifying 
+              objects unseen during the paired training phase. We also demonstrate that co-training on mixed data including 
+              both human and robotic demonstrations via <strong>UniTacHand</strong> yields a superior capability, enabling policies to 
+              achieve better data efficiency with only one-shot demonstration on the real robot. <strong>UniTacHand</strong> provides a 
+              general, scalable, and data-efficient pathway for transferring human haptic intelligence to policies on tactile 
+              dexterous hands.
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-thirds">
+          <div>
+            <h2 class="title is-3 is-size-4-mobile">Method Overview</h2>
+            <div class="columns is-centered">
+              <img src="./images/pipeline.jpg" alt="overview" style="width: 100%;">
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-three-thirds">
+                <div class="content has-text-justified">
+                  <br>
+                  <ol type="a">
+                    <strong>UniTacHand Framework Overview.</strong> An illustration of our two-stage pipeline: 
+                    (Left) Stage 1: Projecting tactile data from a human haptic glove or a robotic hand onto a 
+                    unified MANO UV map. (Right) Stage 2: The contrastive learning framework with reconstruction 
+                    and adversarial losses to align the latent spaces. We align the tactility and hand gesture 
+                    from both sources to the same latent space using a contrastive framework trained with paired 
+                    data. The unified pressure UV maps serve as accurate prior knowledge to supervise the 
+                    domain-specific encoders, thereby enriching such a latent space with tactile-grounded information.
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-thirds">
+          <div>
+            <h2 class="title is-3 is-size-4-mobile">UV mapping Results</h2>
+            <div class="columns is-centered">
+              <img src="./images/showcase.jpg" alt="overview" style="width: 100%;">
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-three-thirds">
+                <div class="content has-text-justified">
+                  <br>
+                  <ol type="a">
+                    <strong>UV mapping Results.</strong> When a human hand (or robotic dexterous hand) grasps 
+                    an object, the activated tactile lattices on a MANO hand are highlighted in red, with the 
+                    poses of the hand (actions of fingers and rotations of the wrist) rendered at the same time. 
+                    In this way, we achieve the unification of hand actions and spatial tactility, as well as 
+                    the alignment between human hands and dexterous hands in terms of tactile information.
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container content">
+      <h2 style="margin-left: 14%">BibTeX</h2>
+      <pre><code>@article{unitachand,
+  title={UniTacHand: Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer},
+  author={Zhang, Chi and Cai, Penglin and Yuan, Haoqi and Xu, Chaoyi and Lu, Zongqing},
+  journal={arXiv preprint arXiv:placeholder},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website template is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a> and adapted from source at <a
+                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a
+                href="https://umi-on-legs.github.io/">UMI</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bulmaCarousel.attach('#double-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: false,
+        loop: true,
+        pagination: true,
+        duration: 300,  // 可选：动画速度
+        pauseOnHover: true
+      });
+    });
+  </script>
+</body>
+
+</html>
