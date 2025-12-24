@@ -1,4 +1,4 @@
-# UniTacHand: Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer
+# UniTacHand: Unified Spatio-Tactile Representation for Human to Robotic Hand Skill Transfer
 
 <div align="center">
 
