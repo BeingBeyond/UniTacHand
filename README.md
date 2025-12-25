@@ -1,9 +1,9 @@
-# UniTacHand: Unified Spatio-Tactile Representation for Human-to-Dexterous-Hand Skill Transfer
+# UniTacHand: Unified Spatio-Tactile Representation for Human to Robotic Hand Skill Transfer
 
 <div align="center">
 
 [[Website]](https://beingbeyond.github.io/UniTacHand/)
-[[arXiv]](https://arxiv.org/abs/placeholder)
+[[arXiv]](https://arxiv.org/abs/2512.21233)
 
 [![Python Version](https://img.shields.io/badge/Python-3.10-blue.svg)]()
 [![GitHub license](https://img.shields.io/badge/MIT-blue)]()
@@ -20,5 +20,10 @@
 # Citation
 If you find our work useful, please consider citing us!
 ```
-
+@article{unitachand,
+  title={UniTacHand: Unified Spatio-Tactile Representation for Human to Robotic Hand Skill Transfer},
+  author={Zhang, Chi and Cai, Penglin and Yuan, Haoqi and Xu, Chaoyi and Lu, Zongqing},
+  journal={arXiv preprint arXiv:2512.21233},
+  year={2025}
+}
 ```
