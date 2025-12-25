@@ -3,7 +3,7 @@
 <div align="center">
 
 [[Website]](https://beingbeyond.github.io/UniTacHand/)
-[[arXiv]](https://arxiv.org/abs/placeholder)
+[[arXiv]](https://arxiv.org/abs/2512.21233)
 
 [![Python Version](https://img.shields.io/badge/Python-3.10-blue.svg)]()
 [![GitHub license](https://img.shields.io/badge/MIT-blue)]()
