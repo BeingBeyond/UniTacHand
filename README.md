@@ -20,5 +20,10 @@
 # Citation
 If you find our work useful, please consider citing us!
 ```
-
+@article{unitachand,
+  title={UniTacHand: Unified Spatio-Tactile Representation for Human to Robotic Hand Skill Transfer},
+  author={Zhang, Chi and Cai, Penglin and Yuan, Haoqi and Xu, Chaoyi and Lu, Zongqing},
+  journal={arXiv preprint arXiv:2512.21233},
+  year={2025}
+}
 ```
